@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.9
+  lodash-es: ^4.17.21
   prettier: ^2.2.1
   svelte: ^3.38.1
   vite: ^2.2.3
@@ -12,6 +13,7 @@ dependencies:
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.1+vite@2.2.3
+  lodash-es: 4.17.21
   prettier: 2.2.1
   vite: 2.2.3
   webextension-polyfill: 0.8.0
@@ -133,6 +135,10 @@ packages:
     resolution: {integrity: sha512-xSphU2KG9867tsYdLD4RWQ1VqdFl4HTO9Thf3I/3dLEfr0dbPTWKsuCKrgqMljg4nPE+Gq0VCnzT3gr0CyBmsw==}
     dependencies:
       has: 1.0.3
+    dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: true
 
   /ms/2.1.2:
