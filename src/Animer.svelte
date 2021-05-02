@@ -1,9 +1,10 @@
 <script>
-    import {convertAnimationToCss} from './util'
-    const element = document.querySelector('.example')
-    const animations = element.getAnimations()
+    import { convertAnimationToCss } from './util'
 
-    console.log(animations)
+    export let element = document.querySelector('.example')
+    $: animations = element.getAnimations()
+
+    $: console.log(animations)
     // console.log(getComputedStyle(element))
 </script>
 
