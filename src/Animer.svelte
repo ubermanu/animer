@@ -3,7 +3,8 @@
     import Sidebar from './Sidebar.svelte'
     import { convertAnimationToCss } from './util'
 
-    const animations = document.getAnimations()
+    /** @type {Animation[]} */
+    export let animations = []
 </script>
 
 <style>
