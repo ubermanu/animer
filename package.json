@@ -1,0 +1,12 @@
+{
+  "name": "animer",
+  "version": "0.1.0",
+  "description": "Browser extension to edit and inspect CSS animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/ubermanu/animer",
+  "author": "ubermanu <manu@paca.happy-dev.fr>",
+  "license": "MIT"
+}
