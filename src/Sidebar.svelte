@@ -4,6 +4,12 @@
     import { camelToKebabCase, getCssProperties } from './util'
 </script>
 
+<style>
+    .sidebar {
+        min-width: 30%;
+    }
+</style>
+
 {#if $selected.animation && $selected.keyframe}
     <aside class="sidebar">
         <button on:click={() => closeSidebar()}>Close</button>
