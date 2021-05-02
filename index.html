@@ -21,10 +21,12 @@
   </head>
   <body>
     <p class="example">Example</p>
+
     <!--  This page serves as a development environment -->
     <script type="module">
-      import Animer from './src/Animer.svelte'
-      new Animer({
+      import App from './src/Animer.svelte'
+
+      new App({
         target: document.body,
         props: { animations: document.getAnimations() }
       })

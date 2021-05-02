@@ -4,13 +4,13 @@
   </head>
   <body>
     <script type="module">
-      import Animer from './src/Animer.svelte'
+      import App from './src/Animer.svelte'
 
       chrome.devtools.inspectedWindow.eval(
         'document.getAnimations()',
         function (animations) {
           console.log(animations)
-          new Animer({ target: document.body, props: { animations } })
+          new App({ target: document.body, props: { animations } })
         }
       )
     </script>
