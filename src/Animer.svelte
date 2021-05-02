@@ -1,4 +1,5 @@
 <script>
+    import {convertAnimationToCss} from './util'
     const element = document.querySelector('.example')
     const animations = element.getAnimations()
 
@@ -23,5 +24,8 @@
                 {/each}
             </ul>
         {/each}
+    </div>
+    <div class="dump">
+        <pre>{convertAnimationToCss(animation)}</pre>
     </div>
 {/each}
