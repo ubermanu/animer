@@ -4,8 +4,8 @@ export default {
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'devtools.html'),
-        panel: resolve(__dirname, 'panel.html')
+        main: resolve(__dirname, 'src/devtools.html'),
+        panel: resolve(__dirname, 'src/panel.html')
       }
     }
   }
