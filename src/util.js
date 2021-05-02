@@ -9,6 +9,17 @@ export function camelToKebabCase(str) {
 }
 
 /**
+ * Filter the props of a keyframe to return the CSS ones.
+ *
+ * @param {{}} keyframe
+ * @return {{}}
+ */
+export function getCssProperties(keyframe) {
+  const { offset, computedOffset, easing, composite, ...styles } = keyframe
+  return styles
+}
+
+/**
  * Convert an animation to plain CSS.
  * Note: Supports only keyframes at the moment
  *
@@ -22,9 +33,8 @@ export function convertAnimationToCss(animation) {
     const keyframes = animation.effect.getKeyframes()
 
     forEach(keyframes, (keyframe) => {
-      const { offset, computedOffset, easing, composite, ...props } = keyframe
-      css += `\t${offset * 100}% {\n`
-      forEach(props, (value, prop) => {
+      css += `\t${keyframe.offset * 100}% {\n`
+      forEach(getCssProperties(keyframe), (value, prop) => {
         css += `\t\t${camelToKebabCase(prop)}: ${value};\n`
       })
       css += `\t}\n`

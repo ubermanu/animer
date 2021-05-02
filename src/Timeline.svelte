@@ -1,4 +1,6 @@
 <script>
+    import { editKeyframe } from './store'
+
     /** @type {Animation} */
     export let animation
 </script>
@@ -30,7 +32,11 @@
 </style>
 
 <div class="timeline">
-    {#each animation.effect.getKeyframes() as { offset }}
-        <div class="keyframe" style="--offset: {offset}">{offset * 100}%</div>
+    {#each animation.effect.getKeyframes() as keyframe}
+        <div class="keyframe"
+             style="--offset: {keyframe.offset}"
+             on:click={() => editKeyframe(animation, keyframe)}>
+            <span>{keyframe.offset * 100}%</span>
+        </div>
     {/each}
 </div>

@@ -1,22 +1,13 @@
 <script>
-    import { writable } from 'svelte/store'
-    import { camelToKebabCase } from './util'
-
-    const selected = writable({ animation: null, keyframe: null })
-
-    export function select(animation, keyframe) {
-        $selected.animation = animation
-        $selected.keyframe = keyframe
-    }
-
-    export function close() {
-        selected.set({ animation: null, keyframe: null })
-    }
+    import { entries } from 'lodash-es'
+    import { closeSidebar, selected } from './store'
+    import { camelToKebabCase, getCssProperties } from './util'
 </script>
 
 {#if $selected.animation && $selected.keyframe}
     <aside class="sidebar">
-        {#each Object.entries($selected.keyframe) as [prop, value]}
+        <button on:click={() => closeSidebar()}>Close</button>
+        {#each entries(getCssProperties($selected.keyframe)) as [prop, value]}
             <div>
                 <label>{camelToKebabCase(prop)}</label>
                 <input name={prop} {value} />
