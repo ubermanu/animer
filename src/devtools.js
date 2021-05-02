@@ -1,1 +1,1 @@
-chrome.devtools.panels.create('Animer', null, 'src/panel.html', null)
+chrome.devtools.panels.create('Animer', null, 'panel.html', null)

@@ -1,12 +1,14 @@
 import { resolve } from 'path'
+import svelte from '@sveltejs/vite-plugin-svelte'
 
 export default {
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/devtools.html'),
-        panel: resolve(__dirname, 'src/panel.html')
+        devtools: resolve(__dirname, 'devtools.html'),
+        main: resolve(__dirname, 'panel.html')
       }
     }
-  }
+  },
+  plugins: [svelte()]
 }
