@@ -1,32 +1,38 @@
 <script>
+    import Timeline from './Timeline.svelte'
+    import Sidebar from './Sidebar.svelte'
     import { convertAnimationToCss } from './util'
 
     export let element = document.querySelector('.example')
     $: animations = element.getAnimations()
 
     $: console.log(animations)
-    // console.log(getComputedStyle(element))
 </script>
 
-{#each animations as animation}
-    <div class="animation">
-        <h4>
-            <span>{animation.animationName}</span>
-            <small>({animation.playState})</small>
-        </h4>
-        <button on:click={() => animation.play()}>Play</button>
-        <button on:click={() => animation.pause()}>Pause</button>
-    </div>
-    <div class="keyframes">
-        {#each animation.effect.getKeyframes() as { offset, computedOffset, easing, composite, ...styles }}
-            <ul>
-                {#each Object.entries(styles) as [prop, value]}
-                    <li>{prop}: {value}</li>
-                {/each}
-            </ul>
+<style>
+    main {
+        display: flex;
+    }
+
+    .animations {
+        flex-grow: 1;
+        padding-left: 0;
+        list-style-position: inside;
+    }
+</style>
+
+<main>
+    <ol class="animations">
+        {#each animations as animation}
+            <li class="animation">
+                <b>{animation.animationName}</b>
+                <small>({animation.playState})</small>
+                <button on:click={() => animation.play()}>Play</button>
+                <button on:click={() => animation.pause()}>Pause</button>
+                <button on:click={() => console.log(convertAnimationToCss(animation))}>Dump</button>
+                <Timeline {animation} />
+            </li>
         {/each}
-    </div>
-    <div class="dump">
-        <pre>{convertAnimationToCss(animation)}</pre>
-    </div>
-{/each}
+    </ol>
+    <Sidebar />
+</main>
