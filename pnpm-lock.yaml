@@ -3,10 +3,12 @@ lockfileVersion: 5.3
 specifiers:
   prettier: ^2.2.1
   vite: ^2.2.3
+  webextension-polyfill: ^0.8.0
 
 devDependencies:
   prettier: 2.2.1
   vite: 2.2.3
+  webextension-polyfill: 0.8.0
 
 packages:
 
@@ -100,4 +102,8 @@ packages:
       rollup: 2.46.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /webextension-polyfill/0.8.0:
+    resolution: {integrity: sha512-a19+DzlT6Kp9/UI+mF9XQopeZ+n2ussjhxHJ4/pmIGge9ijCDz7Gn93mNnjpZAk95T4Tae8iHZ6sSf869txqiQ==}
     dev: true
