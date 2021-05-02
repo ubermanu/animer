@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "manifest_version": 2,
   "description": "Browser extension to edit and inspect CSS animations",
-  "devtools_page": "index.html",
+  "devtools_page": "src/devtools.html",
   "permissions": [
     "tabs",
     "http://*/*",
