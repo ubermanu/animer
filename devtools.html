@@ -3,6 +3,8 @@
     <title></title>
   </head>
   <body>
-    <script type="module" src="./src/devtools.js"></script>
+    <script>
+      chrome.devtools.panels.create('Animer', null, 'panel.html', null)
+    </script>
   </body>
 </html>

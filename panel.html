@@ -3,6 +3,16 @@
     <title></title>
   </head>
   <body>
-    <script type="module" src="./src/panel.js"></script>
+    <script type="module">
+      import Animer from './src/Animer.svelte'
+
+      chrome.devtools.inspectedWindow.eval(
+        'document.getAnimations()',
+        function (animations) {
+          console.log(animations)
+          new Animer({ target: document.body, props: { animations } })
+        }
+      )
+    </script>
   </body>
 </html>
