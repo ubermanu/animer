@@ -1,9 +1,27 @@
 <html lang="en">
   <head>
     <title>Animer</title>
+    <style>
+      @keyframes a-example {
+        from {
+          color: darkorange;
+        }
+
+        to {
+          color: firebrick;
+          text-indent: 20px;
+        }
+      }
+
+      .example {
+        font-size: 1.5rem;
+        animation: a-example 2s alternate infinite;
+      }
+    </style>
   </head>
   <body>
     <!--  This page serves as a development environment -->
     <script type="module" src="./src/panel.js"></script>
+    <p class="example">Example</p>
   </body>
 </html>
