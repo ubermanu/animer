@@ -16,9 +16,9 @@
         <button on:click={() => animation.pause()}>Pause</button>
     </div>
     <div class="keyframes">
-        {#each animation.effect.getKeyframes() as { offset, computedOffset, easing, composite, ...keyframe }}
+        {#each animation.effect.getKeyframes() as { offset, computedOffset, easing, composite, ...styles }}
             <ul>
-                {#each Object.entries(keyframe) as [prop, value]}
+                {#each Object.entries(styles) as [prop, value]}
                     <li>{prop}: {value}</li>
                 {/each}
             </ul>
