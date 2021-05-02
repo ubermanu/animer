@@ -8,5 +8,9 @@
   },
   "repository": "https://github.com/ubermanu/animer",
   "author": "ubermanu <manu@paca.happy-dev.fr>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "vite": "^2.2.3"
+  }
 }
