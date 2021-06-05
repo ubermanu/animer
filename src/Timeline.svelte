@@ -1,8 +1,15 @@
 <script>
-    import { editKeyframe } from './store'
+    import { openSidebar } from './store'
 
     /** @type {Animation} */
     export let animation
+    let keyframes = []
+
+    $: {
+        if (animation && animation.effect instanceof KeyframeEffect) {
+            keyframes = animation.effect.getKeyframes()
+        }
+    }
 </script>
 
 <style>
@@ -32,10 +39,10 @@
 </style>
 
 <div class="timeline">
-    {#each animation.effect.getKeyframes() as keyframe}
+    {#each keyframes as keyframe}
         <div class="keyframe"
              style="--offset: {keyframe.offset}"
-             on:click={() => editKeyframe(animation, keyframe)}>
+             on:click={() => openSidebar(animation, keyframe)}>
             <span>{keyframe.offset * 100}%</span>
         </div>
     {/each}

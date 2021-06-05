@@ -1,20 +1,22 @@
 <script>
     import { entries, map } from 'lodash-es'
-    import { closeSidebar, selected } from './store'
+    import { closeSidebar, curAnimation, curKeyframe } from './store'
     import { camelToKebabCase, getCssProperties } from './util'
 
     // TODO: Clean this
     function update(e) {
         const { name, value } = e.target
 
-        let keyframes = $selected.animation.effect.getKeyframes()
-        keyframes = map(keyframes, k => k.computedOffset === $selected.keyframe.computedOffset ? {
-            ...$selected.keyframe,
+        const data = {
+            ...$curKeyframe,
             [name]: value
-        } : k)
+        }
 
+        let keyframes = $curAnimation.effect.getKeyframes()
+        keyframes = map(keyframes, k => k.computedOffset === $curKeyframe.computedOffset ? data : k)
         keyframes = map(keyframes, k => getCssProperties(k))
-        $selected.animation.effect.setKeyframes(keyframes)
+
+        $curAnimation.effect.setKeyframes(keyframes)
     }
 </script>
 
@@ -24,10 +26,10 @@
     }
 </style>
 
-{#if $selected.animation && $selected.keyframe}
+{#if $curAnimation && $curKeyframe}
     <aside class="sidebar">
         <button on:click={() => closeSidebar()}>Close</button>
-        {#each entries(getCssProperties($selected.keyframe)) as [prop, value]}
+        {#each entries(getCssProperties($curKeyframe)) as [prop, value]}
             <div>
                 <label>{camelToKebabCase(prop)}</label>
                 <input name={prop} {value} on:keyup|preventDefault={update} />
