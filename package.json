@@ -2,23 +2,23 @@
   "name": "animer",
   "version": "0.1.0",
   "description": "Browser extension to edit and inspect CSS animations",
+  "repository": "https://github.com/ubermanu/animer",
+  "author": "ubermanu <manu@paca.happy-dev.fr>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/ubermanu/animer",
-  "author": "ubermanu <manu@paca.happy-dev.fr>",
-  "license": "MIT",
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.9",
-    "lodash-es": "^4.17.21",
-    "prettier": "^2.2.1",
-    "vite": "^2.2.3",
-    "webextension-polyfill": "^0.8.0"
-  },
   "dependencies": {
-    "svelte": "^3.38.1"
+    "svelte": "^3.38.2"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.10",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.3.1",
+    "vite": "^2.3.6",
+    "webextension-polyfill": "^0.8.0"
   }
 }
